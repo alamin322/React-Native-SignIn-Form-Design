@@ -1,20 +1,23 @@
 //import liraries
 import React, { useEffect } from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
+import * as Animatable from 'react-native-animatable';
 
 // create a component
 const SplashScreen = ({ navigation }) => {
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         navigation.navigate("LogIn page")
-    //     }, 2000)
-    // }, []);
+    useEffect(() => {
+        setTimeout(() => {
+            navigation.navigate("LogIn page")
+        }, 2000)
+    }, []);
 
     return (
         <View style={styles.container}>
-            <View>
+            <Animatable.View
+            animation="zoomIn"
+            duration={1500}>
                 <Image style={styles.logo} source={require("../assets/Logo-20.png")} />
-            </View>
+            </Animatable.View>
         </View>
     );
 };
