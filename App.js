@@ -5,6 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 // ================================ Start Import all the components ===============================
 import LogIn from './src/components/LogIn';
 import SplashScreen from './src/components/SplashScreen';
+import ForgotPassword from './src/components/ForgotPassword';
 // ================================ End Import all the components ===============================
 
 // create a new NavigationContainer object
@@ -20,11 +21,19 @@ const App = () => {
           component={SplashScreen}
           options={{ headerShown: false }}
         />
+
         <Stack.Screen
           name="LogIn page"
           component={LogIn}
           options={{ headerShown: false }}
         />
+      
+      <Stack.Screen
+          name="Forgot"
+          component={ForgotPassword}
+          options={{ headerShown: false }}
+        />
+      
       </Stack.Navigator>
     </NavigationContainer>
   )

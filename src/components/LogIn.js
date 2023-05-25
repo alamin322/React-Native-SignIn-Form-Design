@@ -3,7 +3,7 @@ import { Alert, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } fro
 import IconEmail from 'react-native-vector-icons/Entypo';
 import IconPassword from 'react-native-vector-icons/Foundation';
 
-const LogIn = () => {
+const LogIn = ({ navigation }) => {
     const [email, setEamil] = useState("");
     const [password, setPassword] = useState("");
 
@@ -14,9 +14,9 @@ const LogIn = () => {
         Alert.alert("something")
     }
 
-    // const signupBtnHandle = () => {
-    //     Alert.alert("Button clicked");
-    // }
+    const handleForget = () => {
+        navigation.navigate("Forgot");
+    }
 
     return (
         <View style={styles.container}>
@@ -55,7 +55,7 @@ const LogIn = () => {
 
 
             <TouchableOpacity>
-                <Text style={styles.forgot}>
+                <Text style={styles.forgot} onPress={handleForget}>
                     Forgot Password?
                 </Text>
             </TouchableOpacity>
@@ -74,7 +74,7 @@ const LogIn = () => {
 
 
         </View>
-    )
+    );
 };
 
 const styles = StyleSheet.create({
