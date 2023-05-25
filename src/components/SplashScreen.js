@@ -15,7 +15,7 @@ const SplashScreen = ({ navigation }) => {
         <View style={styles.container}>
             <Animatable.View
             animation="zoomIn"
-            duration={1500}>
+            duration={1300}>
                 <Image style={styles.logo} source={require("../assets/Logo-20.png")} />
             </Animatable.View>
         </View>
