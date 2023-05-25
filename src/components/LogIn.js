@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View, Button, Alert } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { Alert, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import IconEmail from 'react-native-vector-icons/Entypo';
+import IconPassword from 'react-native-vector-icons/Foundation';
 
 const LogIn = () => {
     const [email, setEamil] = useState("");
@@ -31,7 +32,7 @@ const LogIn = () => {
 
             {/* input fields */}
             <View style={styles.inputView}>
-                {/* <Icon name="email" size={25} color="#818181" style={styles.email_icon} /> */}
+                <IconEmail name="mail" size={25} color="#818181" style={styles.email_icon} />
                 <TextInput
                     style={styles.inputText}
                     value={email}
@@ -42,6 +43,7 @@ const LogIn = () => {
             </View>
 
             <View style={styles.inputView}>
+                <IconPassword name="key" size={25} color="#818181" style={styles.email_icon} />
                 <TextInput
                     style={styles.inputText}
                     value={password}
@@ -83,11 +85,11 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
     },
-    logo_container : {
-        borderWidth : 1,
-        borderColor : 'gray',
-        borderRadius : 10,
-        padding : 8
+    logo_container: {
+        borderWidth: 1,
+        borderColor: 'gray',
+        borderRadius: 10,
+        padding: 8
     },
     logo: {
         width: 100,
@@ -96,26 +98,39 @@ const styles = StyleSheet.create({
     logoText: {
         fontWeight: "bold",
         fontSize: 20,
-        // color: "#fb5b5a",
         color: "#2169b5",
         marginTop: 20,
         marginBottom: 50
     },
+
     email_icon: {
-        // marginTop : 22,
+        marginRight: 10,
     },
     inputView: {
         width: "80%",
-        // backgroundColor: "#465881",
-        position: "relative",
         backgroundColor: "white",
+        flexDirection: 'row',
+        alignItems: 'center',
+        borderWidth: 1,
         borderRadius: 25,
+        borderColor: 'black',
+        borderRadius: 5,
+        paddingHorizontal: 10,
         height: 50,
         marginBottom: 20,
-        justifyContent: "center",
-        padding: 20,
-        borderWidth: 1,
     },
+
+    // inputView: {
+    //     width: "80%", 
+    //     backgroundColor: "white",
+    //     borderRadius: 25,
+    //     height: 50,
+    //     marginBottom: 20,
+    //     justifyContent: "center",
+    //     padding: 20,
+    //     borderWidth: 1,
+    // },
+
     inputText: {
         height: 50,
         color: "white"
