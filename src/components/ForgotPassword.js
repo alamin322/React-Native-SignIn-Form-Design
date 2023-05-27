@@ -9,6 +9,15 @@ import { styles } from '../components/BasicStyles';
 const ForgotPassword = ({ navigation }) => {
     const [email, setEamil] = useState("");
 
+
+    const submitButtonHandle = () => {
+        Alert.alert("Please Check you email to reset your password..");
+    }
+
+    const handleBack = () => {
+        navigation.navigate("LogIn page");
+    }
+
     return (
         <View style={styles.container}>
 
@@ -34,17 +43,16 @@ const ForgotPassword = ({ navigation }) => {
             </View>
 
             <TouchableOpacity style={styles.loginBtn}>
-                <Text style={styles.loginText}>
+                <Text style={styles.loginText} onPress={submitButtonHandle}>
                     Submit
                 </Text>
             </TouchableOpacity>
 
-            {/* <TouchableOpacity>
-                <Text style={styles.loginText} onPress={signupBtnHandle}>
-                    Signup
+            <TouchableOpacity style={styles.loginBtn}>
+                <Text style={styles.loginText} onPress={handleBack}>
+                    Back
                 </Text>
-            </TouchableOpacity> */}
-
+            </TouchableOpacity>
 
         </View>
     );
