@@ -11,7 +11,11 @@ const ForgotPassword = ({ navigation }) => {
 
 
     const submitButtonHandle = () => {
-        Alert.alert("Please Check you email to reset your password..");
+        if (email.length === 0) {
+            Alert.alert("Email is required.");
+        } else {
+            Alert.alert("Please Check you email to reset your password..");
+        }
     }
 
     const handleBack = () => {
